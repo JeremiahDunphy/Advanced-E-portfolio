@@ -1,34 +1,244 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Roboto:wght@700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Roboto:wght@700&display=swap");
 
 * {
-    padding: 0 4px;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    
-    
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
+
+/* NAVIGATION */
 nav {
-    display: flex;
-    justify-content: space-between;
-    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding:0 20px;
+}
+
+a {
+  text-decoration: none;
+  
+}
+button {
+    cursor: pointer;
 }
 
 #personal-logo {
-    width: 50px;
-    max-width: 50px;
-    filter: invert(1);
+  width: 40px;
+  max-width: 100%;
+  filter: invert(1);
 }
 
 .nav__link--list {
-   display: flex;
-   list-style: none;
-   font-size: small;
+  display: flex;
+  list-style: none;
 }
 
 .nav__link--anchor {
-    list-style: none;
-    padding-left: 16px;
+  list-style: none;
+  padding: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #242424;
+  font-weight: 700;
+}
 
+.fa-adjust {
+  font-size: 20px;
+}
+
+section {
+  background-color: rgb(245, 245, 245);
+  padding: 16px;
+}
+
+.title,
+.title__secondary {
+  font-size: 36px;
+  margin-bottom: 12px;
+  text-align: left;
+  line-height: 1;
+  padding: 16px; /* Add padding to headings */
+}
+
+/* LANDING PAGE */
+#landing-page {
+  min-height: 100vh;
+}
+
+.header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 30px;
+  }
+  
+
+.header__para--about {
+  font-weight: bold;
+}
+
+.title__secondary,
+.header__para--about {
+  color: #f06449;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.5;
+  font-size: 14px;
+  padding: 16px; /* Add padding to paragraph */
+}
+.header__para--bold {
+    color:#f06449
+}
+
+.header__para {
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 100%;
+  padding: 16px;
+}
+.social__list {
+    margin-top: 16px;
+    display: flex;
+  }
+  
+  .social__link,
+  .social__link--primary {
+    background-color: #f06449;
+    color: white;
+    padding: 6px;
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    margin-right: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+
+  .social__link--primary {
+    margin-left: 12px;
+  }
+
+  .click:hover {
+    transform: scale(1.1);
+  }
+
+  .click:active {
+    transform: scale(0.8);
+  }
+
+  .click {
+    transition: 300ms ease;
+  }
+.mail__btn {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: #242424;
+    color: white;
+    position: absolute;
+    bottom: 32px;
+    right: 40px;
+}
+
+.scroll {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll__icon {
+    width: 20px;
+    height: 30px;
+    border: 2px solid #242424;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.scroll__icon::after {
+    content: "";
+    width: 4px;
+    height: 6px;
+    background-color: #242424;
+    border-radius: 2px;
+    animation: scroll 1000ms infinite alternate-reverse;
+
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(3px);
+    }
+    100% {
+        transform: translateY(-3px);
+    }
+}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+/* For devices with screen width up to 375px */
+@media screen and (max-width: 375px) {
+  .title,
+  .title__secondary {
+    font-size: 24px;
+    padding: 16px; /* Add padding to headings */
+  }
+
+  .nav__link--anchor {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 12px;
+    padding: 16px; /* Add padding to paragraph */
+  }
+
+  .header__para {
+    font-size: 16px;
+  }
+}
+
+/* For devices with screen width up to 768px */
+@media screen and (max-width: 768px) {
+  .header__para {
+    font-size: 18px;
+  }
 }

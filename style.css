@@ -394,7 +394,11 @@ input:hover, textarea:hover {
   width: 100%;
   padding: 12px 24px;
   font-size: 20px;
+
 }
+
+
+
 
 .form__submit:hover {
   border-color: #f06449;
@@ -419,6 +423,9 @@ input:hover, textarea:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+  
+    
+        
 
   }
 
@@ -433,7 +440,8 @@ input:hover, textarea:hover {
     align-items: center;
     justify-content: center;
     font-size: 80px;
-    z-index: -1;
+    
+    
   }
 .modal__overlay--sucess {
   background-color: #4bb543;
@@ -441,6 +449,7 @@ input:hover, textarea:hover {
   font-weight: 700;
   text-align: center;
   padding: 50px;
+  
 
 }
   .fa-spinner {
@@ -464,7 +473,7 @@ input:hover, textarea:hover {
     right: 40px;
     color: white;
     font-size: 36px;
-    z-index: 100;
+  
 
 
   }

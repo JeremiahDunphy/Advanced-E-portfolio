@@ -1,16 +1,35 @@
 
+let isModalOpen = false;
+let contrastToggle = false;
+const scaleFactor = 1 / 20;
 
-//template_ts5v3yo
-//service_mzuaeoc
+function moveBackground(event) {
+  const shapes = document.querySelectorAll(".shape");
+  const x = event.clientX * scaleFactor;
+  const y = event.clientY * scaleFactor;
 
-//5ko-1NL2cr8lWES_R
+  for (let i = 0; i < shapes.length; ++i) {
+    const isOdd = i % 2 !== 0;
+    const boolInt = isOdd ? -1 : 1;
+    // Added rotate after tutorial
+    shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px) rotate(${x * boolInt * 10}deg)`
+  }
+}
 
-//G0NWt4gMycJ0g24__0wvQ
+function toggleContrast() {
+  contrastToggle = !contrastToggle;
+  if (contrastToggle) {
+    document.body.classList += " dark-theme"
+  }
+  else {
+    document.body.classList.remove("dark-theme")
+  }
+}
 
 function contact(event) {
     event.preventDefault();
-    const loading = document.querySelector(".modal__overlay--loading");
-    const success = document.querySelector(".modal__overlay--success");
+    let loading = document.querySelector(".modal__overlay--loading");
+    let success = document.querySelector(".modal__overlay--success");
     loading.classList += " modal__overlay--visible";
     emailjs
       .sendForm(
@@ -29,4 +48,14 @@ function contact(event) {
           "The email service is temporarily unavailable. Please contact me directly on miahedunphy@gmail.com"
         );
       });
+}
+
+function toggleModal() {
+    if (isModalOpen) {
+      isModalOpen = false;
+      return document.body.classList.remove("modal--open");
+    }
+    isModalOpen = true;
+    document.body.classList += " modal--open";
   }
+  

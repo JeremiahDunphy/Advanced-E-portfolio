@@ -100,6 +100,11 @@ p {
     color:#f06449
 }
 
+.orange {
+  color:#f06449
+}
+
+
 .header__para {
   font-size: 20px;
   line-height: 1.5;
@@ -139,6 +144,7 @@ p {
   }
 
   .click {
+    cursor: pointer;
     transition: 300ms ease;
   }
 .mail__btn {
@@ -254,6 +260,11 @@ p {
 
 .modal__half {
   width: 50%;
+  padding: 25px 75px;
+  display: flex;
+flex-direction: column;
+justify-content: center;
+position: relative;
 }
 
 .modal__about {
@@ -262,6 +273,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 padding: 50px;
+line-height: 1.75;
 }
 
 .modal__contact {
@@ -278,19 +290,64 @@ flex-wrap: wrap;
 .modal__language {
   width: 25%;
   padding: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__language .modal__language--img {
+  transform: scale(1.6);
+  transition: all 300ms ease;
+}
+
+.modal__language:hover .language__name {
+  transform: scale(0.8);
+  transition: all 300ms ease;
+  margin-top: 20px; /* Add margin to increase space between image and text */
+}
+
+.language__name {
+  position: absolute;
+  bottom: 0;
+  transform: scale(1);
 }
 .modal__language--img {
   width: 25%
+}
   
+.modal__language:hover {
+filter: brightness(80%);
+transform: scale(0.9);
 }
 
 
 .modal__title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.modal__title--contact {
   font-size: 26px;
 }
 
+.modal__sub-title--contact, .form__item--label {
+  font-size: 14px;
+  margin-top: 12px;
+
+}
+
+#name1 {
+  resize: vertical;
+  height: 100px;
+  margin-top: 6px;
+}
+
+
 .modal__sub-title {
-  margin: 12px 0 24px 0;
+  margin: 8px 0 20px 0;
+  font-size: 20px;
+
 }
 
 
@@ -299,6 +356,118 @@ flex-wrap: wrap;
   line-height: 1.75;
 }
 
+.language__name {
+  position: absolute;
+  bottom: -10px;
+  transform: scale(0);
+}
+
+input, textarea {
+  width: 100%;
+  background-color: #242424;
+  color: white;
+  border: 1px solid #c0c4cc;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 40px;
+ 
+}  
+
+input:focus, textarea:focus {
+  border-color: #f06449; 
+}
+
+input:hover, textarea:hover {
+  border-color: #f06449; 
+
+}
+
+
+.form__submit {
+  margin-top: 16px;
+  background-color: #f06449;
+  border: 2px solid #f06449;
+  color: white;
+  font-weight: 700;
+  max-width: 240px;
+  width: 100%;
+  padding: 12px 24px;
+  font-size: 20px;
+}
+
+.form__submit:hover {
+  border-color: #f06449;
+  background-color: transparent;
+  transition: all 300ms;
+
+}
+
+  .form__submit:active {
+    border-color: #f06449;
+    color: #f06449;
+
+
+  }
+
+  .modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .modal__overlay--loading {
+    background-color: #242424;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    z-index: -1;
+  }
+.modal__overlay--sucess {
+  background-color: #4bb543;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  padding: 50px;
+
+}
+  .fa-spinner {
+    animation: spinner 750ms infinite linear;
+
+  }
+
+  @keyframes spinner {
+    0% {
+     transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  .modal__exit {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 36px;
+    z-index: 100;
+
+
+  }
 /* PROJECTS  */
 
 .section__title {
@@ -306,6 +475,8 @@ flex-wrap: wrap;
   font-size: 48px;
   margin-bottom: 60px;
 }
+
+
 
 .project {
   margin-bottom: 135px;

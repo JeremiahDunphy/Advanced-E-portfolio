@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
     <title>Jeremiah Dunphy</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("5ko-1NL2cr8lWES_R");
+   })();
+</script>
+<script src="index.js">
+
+</script>
 </head>
 
 <body>
@@ -65,10 +76,10 @@
         </a>
         <div class="modal">
             <div class="modal__half modal__about">
-                <h3 class="modal__title modal_title--about">Here's a bit about me</h3>
+                <h3 class="modal__title modal_title--about"><b>Here's a bit about me</b></h3>
                 <h4 class="modal__sub-title modal_sub-title--about">Frontend Software Engineer</h4>
-                <p class="modal__para">I am a 27 year old Software Engineer based out of hartford Connecticut. I have a strong passion for developing websites with great user experiences. <br>
-                I currently work on extremely difficult engineering problems and learn from a team consisting of some of the most talented and experienced software engineers every day.
+                <p class="modal__para">I am a 27 year old <b class="orange">Frontend Software Engineer</b> based out of Hartford, Connecticut. I have a strong passion for developing websites with great <b class ="orange">user experiences.</b> <br>
+                I currently work on extremely difficult engineering problems and learn from a team consisting of some of the most <b class="orange">talented</b> and <b class="orange">experienced </b>software engineers every day.
              </p>
              <div class="modal__languages">
                 <figure class="modal__language">
@@ -113,10 +124,45 @@
                 </figure>
               </div>
             </div>
-            <div class="modal__half modal__contact">Lets have a chat
-                
+            <div class="modal__half modal__contact">            
+            <class="modal__title modal__title--contact">
+                <h3 class="modal__title modal__title--contact ">
+                    Let's have a chat!
+                </h3>
+                <h3 class="modal__title modal__sub-title--contact">
+                    I am currently open to new opportunities and would love to hear from you.
+                </h3>
+                <form onsubmit="contact(event)" id="contact__form">
+                    <div class="form__item">
+                        <label  class="form__item--label">
+                            Name:
+                            <input id="name" name="user_name" type="text" required></input>
+                        </label>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">
+                            E-mail:
+                            <input id="name" name="user_email" type="email" required></input>
+                        </label>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">
+                            Message:
+                            <textarea id="name1" name="message" type="text" required></textarea>
+                        </label>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send it my way!</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--sucess">
+                    Thanks for the message! Looking foward to speaking to you soon.
+                </div>
             </div>
-        </div>
+    
+        <i class="fas fa-times modal__exit click"></i>
+    </div>
     </section>
     <section id="projects">
         <div class="container">
